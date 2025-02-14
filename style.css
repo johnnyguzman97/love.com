@@ -1,0 +1,78 @@
+body {
+    background-color: #FADADD; /* Soft pink */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.rose {
+    width: 150px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background-color: red;
+    color: white;
+}
+
+#noBtn {
+    background-color: black;
+    color: white;
+}
+
+#message {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkred;
+}
+
+/* Petal falling effect */
+.petal {
+    position: absolute;
+    width: 40px;
+    height: auto;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}

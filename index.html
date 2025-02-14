@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="pink.avif" alt="Red Roses" class="rose">
+        <h1>Will you be my Valentine?</h1>
+        <div class="buttons">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        document.getElementById("yesBtn").addEventListener("click", function() {
+            document.getElementById("message").innerText = "You are mine ❤️";
+            startPetalFall();
+        });
+
+        document.getElementById("noBtn").addEventListener("click", function() {
+            alert("Try again 😜");
+        });
+
+        function startPetalFall() {
+            for (let i = 0; i < 15; i++) {
+                let petal = document.createElement("img");
+                petal.src = "petal.png.avif"; // Petal image
+                petal.classList.add("petal");
+                petal.style.left = Math.random() * window.innerWidth + "px";
+                petal.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                document.body.appendChild(petal);
+
+                setTimeout(() => {
+                    petal.remove();
+                }, 5000); // Remove after animation ends
+            }
+        }
+    </script>
+</body>
+</html>
+
+
